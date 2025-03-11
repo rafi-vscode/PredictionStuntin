@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Evaluasi Model{% endblock %}
+
+{% block content %}
+<h2>Evaluasi Model</h2>
+<p>Berikut adalah hasil evaluasi model berdasarkan data uji:</p>
+
+<table border="1">
+    <tr>
+        <th>Model</th>
+        <th>Akurasi</th>
+        <th>Presisi</th>
+        <th>Recall</th>
+        <th>F1-Score</th>
+    </tr>
+    <tr>
+        <td>Random Forest</td>
+        <td>{{ accuracy_rf }}</td>
+        <td>{{ precision_rf }}</td>
+        <td>{{ recall_rf }}</td>
+        <td>{{ f1_rf }}</td>
+    </tr>
+    <tr>
+        <td>Logistic Regression</td>
+        <td>{{ accuracy_lr }}</td>
+        <td>{{ precision_lr }}</td>
+        <td>{{ recall_lr }}</td>
+        <td>{{ f1_lr }}</td>
+    </tr>
+    <tr>
+        <td>Decision Tree</td>
+        <td>{{ accuracy_dt }}</td>
+        <td>{{ precision_dt }}</td>
+        <td>{{ recall_dt }}</td>
+        <td>{{ f1_dt }}</td>
+    </tr>
+</table>
+
+{% endblock %}

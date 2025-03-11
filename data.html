@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Data Prediksi{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Hasil Prediksi</h2>
+
+    {% if prediction_data %}
+    <div class="result-card">
+        <p>👤 Pengguna: <strong>{{ prediction_data.nama }}</strong></p>
+
+        <h3>Data yang Dimasukkan:</h3>
+        <ul>
+            <li><strong>Umur:</strong> {{ prediction_data.umur }} tahun</li>
+            <li><strong>Berat Badan:</strong> {{ prediction_data.bb }} kg</li>
+            <li><strong>Tinggi Badan:</strong> {{ prediction_data.tb }} cm</li>
+            <li><strong>IMT:</strong> {{ prediction_data.imt }}</li>
+            <li><strong>LILA:</strong> {{ prediction_data.lila }} cm</li>
+            <li><strong>Hemoglobin:</strong> {{ prediction_data.hb }} g/dL</li>
+        </ul>
+
+        <h3>Hasil Prediksi:</h3>
+        <p class="prediction-result">
+            <strong>Random Forest:</strong> 
+            <span class="prediction-label
+                {% if prediction_data.prediction_rf == 0 %} healthy
+                {% elif prediction_data.prediction_rf == 1 %} light-risk
+                {% elif prediction_data.prediction_rf == 2 %} moderate-risk
+                {% elif prediction_data.prediction_rf == 3 %} high-risk
+                {% endif %}">
+                {{ prediction_data.prediction_label }}
+            </span>
+        </p>
+
+        <a href="{{ url_for('logout') }}" class="btn-danger">Keluar</a>
+    </div>
+    {% else %}
+        <p class="error-message">⚠️ Belum ada data prediksi.</p>
+    {% endif %}
+</div>
+{% endblock %}

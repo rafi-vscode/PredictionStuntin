@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistem Prediksi Risiko Stunting{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2 class="dashboard-title">PKM UMPKU</h2>
+        <ul>
+            <li><a href="{{ url_for('home') }}">🏠 Home</a></li>
+            <li><a href="{{ url_for('prediction') }}">📊 Prediksi</a></li>
+            <li><a href="{{ url_for('data') }}">📋 Data</a></li>
+            <li><a href="{{ url_for('evaluation') }}">📈 Evaluasi</a></li>
+            {% if "nama" in session %}
+                <li><a href="{{ url_for('logout') }}" class="btn-logout">🔓 Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="main-content">
+        <header>
+            <h1>{% block header %}Sistem Prediksi Risiko Stunting{% endblock %}</h1>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Sistem Prediksi Risiko Stunting. Semua Hak Dilindungi.</p>
+        </footer>
+    </div>
+</body>
+</html>

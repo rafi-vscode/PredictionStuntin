@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Prediksi Risiko Stunting{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Masukkan Data untuk Prediksi</h2>
+
+    <form action="{{ url_for('prediction') }}" method="POST" class="form-container">
+        <label for="umur">Umur (tahun):</label>
+        <input type="number" step="0.1" name="umur" required>
+
+        <label for="bb">Berat Badan (kg):</label>
+        <input type="number" step="0.1" name="bb" required>
+
+        <label for="tb">Tinggi Badan (cm):</label>
+        <input type="number" step="0.1" name="tb" required>
+
+        <label for="imt">IMT:</label>
+        <input type="number" step="0.1" name="imt" required>
+
+        <label for="lila">Lingkar Lengan Atas (cm):</label>
+        <input type="number" step="0.1" name="lila" required>
+
+        <label for="hb">Hemoglobin (g/dL):</label>
+        <input type="number" step="0.1" name="hb" required>
+
+        <button type="submit" class="btn-primary">🔍 Prediksi</button>
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,363 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #2d3e50;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar h2 {
+    color: #ffffff;
+    background: #1a2533;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #03dac6;
+    color: #000;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #2d3e50;
+}
+
+/* Form */
+.form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #2d3e50;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f8f9fa;
+    color: #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Kartu Hasil Prediksi */
+.result-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.result-card h2 {
+    font-size: 22px;
+    color: #2d3e50;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.result-card h3 {
+    font-size: 18px;
+    color: #444;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.result-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.result-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #333;
+}
+
+.result-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* Tampilan Hasil Prediksi */
+.prediction-result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Warna Sesuai Kategori Prediksi */
+.prediction-result.healthy {
+    background: #28a745;
+    color: white;
+}
+
+.prediction-result.light-risk {
+    background: #ffc107;
+    color: #333;
+}
+
+.prediction-result.moderate-risk {
+    background: #fd7e14;
+    color: white;
+}
+
+.prediction-result.high-risk {
+    background: #dc3545;
+    color: white;
+}
+
+/* Efek Hover pada Kartu */
+.result-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease-in-out;
+}
+
+/* Animasi Muncul */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Kontainer utama */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Judul */
+h2 {
+    font-size: 24px;
+    color: #2d3e50;
+    margin-bottom: 20px;
+}
+
+/* Kartu hasil prediksi */
+.result-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* List data input */
+.result-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.result-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #333;
+}
+
+.result-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* Hasil prediksi */
+.prediction-result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Warna hasil prediksi */
+.prediction-label {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Warna berdasarkan hasil */
+.prediction-label.healthy {
+    background: #28a745;
+    color: white;
+}
+
+.prediction-label.light-risk {
+    background: #ffc107;
+    color: #333;
+}
+
+.prediction-label.moderate-risk {
+    background: #fd7e14;
+    color: white;
+}
+
+.prediction-label.high-risk {
+    background: #dc3545;
+    color: white;
+}
+
+/* Tombol Keluar */
+.btn-danger {
+    background: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+/* Pesan error */
+.error-message {
+    font-size: 16px;
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}
